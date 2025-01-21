@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj": {}
+    "C:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj": {
+    "C:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj",
+        "projectUniqueName": "C:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj",
         "projectName": "kacper_kubacki",
-        "projectPath": "c:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj",
+        "projectPath": "C:\\Users\\kap1\\Desktop\\kacper_kubacki\\kacper_kubacki.csproj",
         "packagesPath": "C:\\Users\\kap1\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kap1\\Desktop\\kacper_kubacki\\obj\\",
+        "outputPath": "C:\\Users\\kap1\\Desktop\\kacper_kubacki\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

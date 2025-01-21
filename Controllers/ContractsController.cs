@@ -38,7 +38,7 @@ public class ContractsController : Controller
             })
             .ToListAsync();
 
-        return View(contracts); // Pass the ViewModel list to the view
+        return View(contracts);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
