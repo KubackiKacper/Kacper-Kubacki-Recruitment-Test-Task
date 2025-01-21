@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace kacper_kubacki.Migrations
 {
     /// <inheritdoc />
-    public partial class Test : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -68,9 +70,29 @@ namespace kacper_kubacki.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "ProcessEquipmentType",
+                columns: new[] { "Id", "Area", "Code", "Name" },
+                values: new object[,]
+                {
+                    { 1, 5, "PET1", "PET_Name1" },
+                    { 2, 10, "PET2", "PET_Name2" },
+                    { 3, 15, "PF3", "PET_Name3" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "ProductionFacility",
                 columns: new[] { "Id", "Code", "Name", "StandardArea" },
-                values: new object[] { 1, "PF1", "Name 1", 10 });
+                values: new object[,]
+                {
+                    { 1, "PF1", "PF_Name1", 100 },
+                    { 2, "PF2", "PF_Name2", 200 },
+                    { 3, "PF3", "PF_Name3", 300 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "EquipmentPlacementContract",
+                columns: new[] { "Id", "EquipmentQuantity", "ProcessEquipmentTypeId", "ProductionFacilityId" },
+                values: new object[] { 1, 5, 1, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_EquipmentPlacementContract_ProcessEquipmentTypeId",

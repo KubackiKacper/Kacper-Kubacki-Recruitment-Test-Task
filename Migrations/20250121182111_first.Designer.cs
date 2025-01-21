@@ -11,8 +11,8 @@ using kacper_kubacki.Data;
 namespace kacper_kubacki.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20250120190350_Test")]
-    partial class Test
+    [Migration("20250121182111_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,15 @@ namespace kacper_kubacki.Migrations
                     b.HasIndex("ProductionFacilityId");
 
                     b.ToTable("EquipmentPlacementContract");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EquipmentQuantity = 5,
+                            ProcessEquipmentTypeId = 1,
+                            ProductionFacilityId = 1
+                        });
                 });
 
             modelBuilder.Entity("kacper_kubacki.Models.ProcessEquipmentType", b =>
@@ -72,6 +81,29 @@ namespace kacper_kubacki.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProcessEquipmentType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Area = 5,
+                            Code = "PET1",
+                            Name = "PET_Name1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Area = 10,
+                            Code = "PET2",
+                            Name = "PET_Name2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Area = 15,
+                            Code = "PF3",
+                            Name = "PET_Name3"
+                        });
                 });
 
             modelBuilder.Entity("kacper_kubacki.Models.ProductionFacility", b =>
@@ -102,8 +134,22 @@ namespace kacper_kubacki.Migrations
                         {
                             Id = 1,
                             Code = "PF1",
-                            Name = "Name 1",
-                            StandardArea = 10
+                            Name = "PF_Name1",
+                            StandardArea = 100
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Code = "PF2",
+                            Name = "PF_Name2",
+                            StandardArea = 200
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Code = "PF3",
+                            Name = "PF_Name3",
+                            StandardArea = 300
                         });
                 });
 

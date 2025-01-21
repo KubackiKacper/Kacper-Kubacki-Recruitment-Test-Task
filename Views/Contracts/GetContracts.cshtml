@@ -1,0 +1,21 @@
+@model IEnumerable<kacper_kubacki.ViewModels.ContractViewModel>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Production Facility Name</th>
+            <th>Process Equipment Type Name</th>
+            <th>Equipment Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contract in Model)
+        {
+            <tr>
+                <td>@contract.ProductionFacilityName</td>
+                <td>@contract.ProcessEquipmentTypeName</td>
+                <td>@contract.EquipmentQuantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

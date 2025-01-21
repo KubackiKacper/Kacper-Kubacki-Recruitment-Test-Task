@@ -12,7 +12,7 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Contracts/Error");
 
     app.UseHsts();
 }
@@ -24,7 +24,10 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}")
+app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Contracts}/{action=GetContracts}/{id?}"
+    )
     .WithStaticAssets();
 
 app.Run();
