@@ -2,7 +2,7 @@
 ## This project implements a service for managing equipment placement contracts in production facilities. The solution includes a database deployed with Entity Framework Core, API endpoints, and a user interface for managing contracts.
 ### After creating a migration ProductionFacilities and TypesOfProcessEquipment tables will be created and filled with example data using EntityFrameworkCore:
 #### ProductionFacility table:
-![Reference Image](/Screenshots/ProductionFacilityTable.PNG)
+![Reference Image](/Screenshots/ProductionFacilityTable.png)
 
 #### ProcessEquipmentType table:
 ![Reference Image](/Screenshots/ProcessEquipmentTypeTable.png)
