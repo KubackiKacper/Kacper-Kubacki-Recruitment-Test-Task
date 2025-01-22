@@ -5,7 +5,7 @@
 ![Reference Image](/Screenshots/ProductionFacilityTable.PNG)
 
 #### ProcessEquipmentType table:
-![Reference Image](/Screenshots/ProcessEquipmentTypeTable.PNG)
+![Reference Image](/Screenshots/ProcessEquipmentTypeTable.png)
 
 #### To connect the application to your database engine, update the *Server Name* in the *ConnectionString* located in appsettings.json:
 
