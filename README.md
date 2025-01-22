@@ -13,7 +13,7 @@
     "DefaultConnection":"Server=YourServerName;Database=EquipmentDb;Trusted_Connection=True;Command Timeout=300;
       MultipleActiveResultSets=true;TrustServerCertificate=true;Integrated Security=True;"}
 
-### Replace YourServerName with the name of your SQL Server instance.
+### Replace *YourServerName* with the name of your SQL Server instance.
 
 ### Adding a New Contract
 #### To add a new contract:
