@@ -64,20 +64,9 @@ namespace kacper_kubacki.Data
                     new ProcessEquipmentType
                     {
                         Id = 3,
-                        Code = "PF3",
+                        Code = "PET3",
                         Name = "PET_Name3",
                         Area = 15,
-                    }
-                );
-            modelBuilder
-                .Entity<EquipmentPlacementContract>()
-                .HasData(
-                    new EquipmentPlacementContract
-                    {
-                        Id = 1,
-                        ProductionFacilityId = 1,
-                        ProcessEquipmentTypeId = 1,
-                        EquipmentQuantity = 5,
                     }
                 );
             modelBuilder

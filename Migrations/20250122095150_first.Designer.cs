@@ -11,7 +11,7 @@ using kacper_kubacki.Data;
 namespace kacper_kubacki.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20250121182111_first")]
+    [Migration("20250122095150_first")]
     partial class first
     {
         /// <inheritdoc />
@@ -48,15 +48,6 @@ namespace kacper_kubacki.Migrations
                     b.HasIndex("ProductionFacilityId");
 
                     b.ToTable("EquipmentPlacementContract");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EquipmentQuantity = 5,
-                            ProcessEquipmentTypeId = 1,
-                            ProductionFacilityId = 1
-                        });
                 });
 
             modelBuilder.Entity("kacper_kubacki.Models.ProcessEquipmentType", b =>
@@ -101,7 +92,7 @@ namespace kacper_kubacki.Migrations
                         {
                             Id = 3,
                             Area = 15,
-                            Code = "PF3",
+                            Code = "PET3",
                             Name = "PET_Name3"
                         });
                 });

@@ -19,11 +19,6 @@ public class ContractsController : Controller
         _db = db;
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-
     [HttpGet]
     public async Task<IActionResult> GetContracts()
     {
@@ -39,6 +34,77 @@ public class ContractsController : Controller
             .ToListAsync();
 
         return View(contracts);
+    }
+
+    [HttpGet]
+    public IActionResult AddContracts()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddContracts(AddContractRequest request)
+    {
+        if (
+            string.IsNullOrEmpty(request.ProductionFacilityCode)
+            || string.IsNullOrEmpty(request.ProcessEquipmentTypeCode)
+            || request.EquipmentQuantity <= 0
+        )
+        {
+            ModelState.AddModelError(string.Empty, "All fields are required and must be valid.");
+            return View(request);
+        }
+
+        var facility = await _db
+            .ProductionFacility.Include(f => f.Contracts)
+            .ThenInclude(c => c.ProcessEquipmentType)
+            .FirstOrDefaultAsync(f => f.Code == request.ProductionFacilityCode);
+
+        if (facility == null)
+        {
+            ModelState.AddModelError(string.Empty, "Production facility not found.");
+            return View(request);
+        }
+
+        var equipmentType = await _db.ProcessEquipmentType.FirstOrDefaultAsync(e =>
+            e.Code == request.ProcessEquipmentTypeCode
+        );
+
+        if (equipmentType == null)
+        {
+            ModelState.AddModelError(string.Empty, "Process equipment type not found.");
+            return View(request);
+        }
+
+        int requiredArea = request.EquipmentQuantity * equipmentType.Area;
+
+        int occupiedArea = facility.Contracts.Sum(c =>
+            c.EquipmentQuantity * c.ProcessEquipmentType.Area
+        );
+
+        int availableArea = facility.StandardArea - occupiedArea;
+
+        if (requiredArea > availableArea)
+        {
+            ModelState.AddModelError(
+                string.Empty,
+                $"Not enough available area in the production facility. "
+                    + $"Required: {requiredArea}, Available: {availableArea}"
+            );
+            return View(request);
+        }
+
+        var newContract = new EquipmentPlacementContract
+        {
+            ProductionFacilityId = facility.Id,
+            ProcessEquipmentTypeId = equipmentType.Id,
+            EquipmentQuantity = request.EquipmentQuantity,
+        };
+
+        _db.EquipmentPlacementContract.Add(newContract);
+        await _db.SaveChangesAsync();
+
+        return RedirectToAction("GetContracts");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

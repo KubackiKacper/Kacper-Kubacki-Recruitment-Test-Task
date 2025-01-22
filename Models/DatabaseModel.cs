@@ -52,4 +52,11 @@ namespace kacper_kubacki.Models
         [Required]
         public int EquipmentQuantity { get; set; }
     }
+
+    public class AddContractRequest
+    {
+        public string ProductionFacilityCode { get; set; }
+        public string ProcessEquipmentTypeCode { get; set; }
+        public int EquipmentQuantity { get; set; }
+    }
 }

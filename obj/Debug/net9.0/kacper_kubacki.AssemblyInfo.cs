@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kacper_kubacki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b301c36283e17b2e197fa8e6f1ccd2d75dcb67f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e373319a5b7a1e0cf2d1668037a757e5b770e53")]
 [assembly: System.Reflection.AssemblyProductAttribute("kacper_kubacki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kacper_kubacki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

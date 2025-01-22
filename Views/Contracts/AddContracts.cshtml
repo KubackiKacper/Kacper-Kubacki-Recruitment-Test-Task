@@ -1,0 +1,40 @@
+@model AddContractRequest
+
+<form asp-action="AddContracts" method="post">
+  <div class="border p-3 mt-4">
+    <div class="row pb-2">
+      <h2 class="Text primary">Add Contract</h2>
+      <hr />
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+            <label asp-for="ProductionFacilityCode"></label>
+            <input required asp-for="ProductionFacilityCode" class="form-control"/>
+            <span asp-validation-for="ProductionFacilityCode" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ProcessEquipmentTypeCode"></label>
+            <input  required asp-for="ProcessEquipmentTypeCode" class="form-control"/>
+            <span asp-validation-for="ProcessEquipmentTypeCode" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EquipmentQuantity"></label>
+            <input required asp-for="EquipmentQuantity" class="form-control"/>
+            <span asp-validation-for="EquipmentQuantity" class="text-danger"></span>
+        </div>
+        
+        <button type="submit" class="btn btn-outline-success" asp-action="AddContracts">Add</button>
+        <a asp-controller="Contracts" asp-action="GetContracts" class="btn btn-outline-dark">Back</a>
+      </div>
+      <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+  </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

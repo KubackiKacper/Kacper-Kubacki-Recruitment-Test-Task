@@ -76,7 +76,7 @@ namespace kacper_kubacki.Migrations
                 {
                     { 1, 5, "PET1", "PET_Name1" },
                     { 2, 10, "PET2", "PET_Name2" },
-                    { 3, 15, "PF3", "PET_Name3" }
+                    { 3, 15, "PET3", "PET_Name3" }
                 });
 
             migrationBuilder.InsertData(
@@ -88,11 +88,6 @@ namespace kacper_kubacki.Migrations
                     { 2, "PF2", "PF_Name2", 200 },
                     { 3, "PF3", "PF_Name3", 300 }
                 });
-
-            migrationBuilder.InsertData(
-                table: "EquipmentPlacementContract",
-                columns: new[] { "Id", "EquipmentQuantity", "ProcessEquipmentTypeId", "ProductionFacilityId" },
-                values: new object[] { 1, 5, 1, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_EquipmentPlacementContract_ProcessEquipmentTypeId",
